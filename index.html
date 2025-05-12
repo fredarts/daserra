@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Da Serra – Soluções Sustentáveis da Floresta</title>
+  <meta name="description" content="Da Serra transforma biomassa florestal em carvão vegetal, estilha de madeira e vinagre de madeira, criando impacto ecológico e social positivo.">
+
+<!-- Favicons Completos -->
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+<link rel="manifest" href="images/favicon_io/site.webmanifest">
+<link rel="icon" href="images/favicon_io/favicon.ico">
+<!-- Fim Favicons -->
+
+  <!-- Tailwind CSS (use build local para produção) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS próprio -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="font-sans antialiased text-gray-800 scroll-smooth">
+
+  <!-- ░░░ NAVBAR ░░░ -->
+<header class="bg-white/80 backdrop-blur shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <a href="#" class="flex items-center gap-2 text-2xl font-bold burnt">
+      <img src="images/favicon_io/favicon-32x32.png" alt="Da Serra Logo" class="h-7 w-7"> <!-- Ajuste h-7 w-7 ou conforme preferir -->
+      <span>DA SERRA</span>
+    </a>
+
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="#sobre"    class="hover:text-emerald-600">Sobre nós</a>
+      <a href="#impacto"  class="hover:text-emerald-600">Impacto</a>
+      <a href="#produtos" class="hover:text-emerald-600">Produtos</a>
+      <a href="#faq"      class="hover:text-emerald-600">FAQ</a>
+    </nav>
+
+    <a href="#produtos"
+       class="hidden md:inline-block px-5 py-2 rounded-full bg-emerald-600 text-white shadow hover:bg-emerald-700">
+      Comprar
+    </a>
+  </div>
+</header>
+
+  <!-- ░░░ HERO (slideshow Ken Burns) ░░░ -->
+<section id="hero-slideshow-container" class="relative">
+
+  <!-- faixa de slides gerada em JS -->
+  <div id="hero-slideshow"></div>
+
+  <!-- setas -->
+  <button id="heroPrev" class="absolute left-4 top-1/2 -translate-y-1/2 z-20
+                                w-10 h-10 flex items-center justify-center
+                                bg-white/80 hover:bg-white rounded-full shadow-lg backdrop-blur">‹
+  </button>
+  <button id="heroNext" class="absolute right-4 top-1/2 -translate-y-1/2 z-20
+                                 w-10 h-10 flex items-center justify-center
+                                 bg-white/80 hover:bg-white rounded-full shadow-lg backdrop-blur">›
+  </button>
+
+  <!-- bolinhas -->
+  <div id="heroDots" class="absolute bottom-6 inset-x-0 flex justify-center gap-2 z-20"></div>
+
+  <div class="hero-overlay-dynamic"></div>
+
+  <!-- conteúdo DINÂMICO (os IDs serão actualizados em JS) -->
+  <div class="hero-content-wrapper max-w-7xl mx-auto px-6 py-24 h-full
+              flex flex-col lg:flex-row gap-10 items-center">
+    <div class="max-w-xl text-center lg:text-left text-white">
+      <h1 id="heroTitle" class="text-5xl lg:text-6xl font-extrabold burnt2 mb-6"></h1>
+      <p  id="heroText"  class="text-lg md:text-xl mb-8"></p>
+      <a  id="heroBtn"   href="#" class="inline-block px-8 py-3 rounded-full
+                                     bg-emerald-600 text-lg font-semibold
+                                     shadow hover:bg-emerald-700 transition"></a>
+    </div>
+
+    <!-- saco aparece apenas nos slides que o JS indicar -->
+    <div id="heroBagImageContainer"
+         class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+      <img src="images/bag_carvao_da_serra_sembg.png"
+           alt="Saco Carvão da Serra"
+           class="w-full max-w-sm drop-shadow-xl rounded-lg">
+    </div>
+  </div>
+</section>
+
+  <!-- ░░░ SOBRE ░░░ -->
+  <section id="sobre" class="py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold burnt mb-6">Por que existimos</h2>
+      <p class="max-w-3xl mx-auto text-lg mb-10">
+        A <strong>Da Serra</strong> recolhe biomassa queimada e subaproveitada na Serra da Aboboreira
+        e do Marão, transformando-a em soluções circulares que previnem novos incêndios
+        e geram rendimento local.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="p-6 bg-white shadow rounded-xl">
+          <h3 class="font-semibold text-lg mb-2">Economia circular</h3>
+          <p>Convertendo resíduos florestais em carvão, estilha e vinagre de madeira, reduzimos
+             desperdício e criamos valor.</p>
+        </div>
+        <div class="p-6 bg-white shadow rounded-xl">
+          <h3 class="font-semibold text-lg mb-2">Regeneração ecológica</h3>
+          <p>Cada produto financia a limpeza de 100 m² e a plantação de espécies autóctones
+             resistentes ao fogo.</p>
+        </div>
+        <div class="p-6 bg-white shadow rounded-xl">
+          <h3 class="font-semibold text-lg mb-2">Desenvolvimento local</h3>
+          <p>Empregamos equipas da comunidade e apoiamos brigadas voluntárias de vigilância florestal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ IMPACTO ░░░ -->
+  <section id="impacto" class="py-20">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <img src="images/reflorestação.png" alt="Plantação de árvores" class="rounded-xl shadow-lg">
+      <div>
+        <h2 class="text-3xl font-bold burnt mb-4">Nosso impacto em 2024</h2>
+        <ul class="space-y-4 text-lg list-disc list-inside">
+          <li><strong>12 hectares</strong> limpos de combustível florestal</li>
+          <li><strong>35 t CO₂ eq.</strong> potencialmente sequestrados via estilha &amp; biochar</li>
+          <li><strong>18</strong> postos de trabalho locais criados</li>
+          <li><strong>3 000 €</strong> investidos em viveiros comunitários</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ GALERIA ░░░ -->
+<section id="galeria" class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold burnt text-center mb-10">
+      Galeria das Áreas Requalificadas
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <img src="images/gallery1.jpg"  alt="Antes da intervenção"
+           class="object-cover h-64 w-full rounded-lg shadow cursor-pointer hover:opacity-80"
+           onclick="openModal(this.src)">
+      <img src="images/gallery2.jpg"  alt="Equipa em ação"
+           class="object-cover h-64 w-full rounded-lg shadow cursor-pointer hover:opacity-80"
+           onclick="openModal(this.src)">
+      <img src="images/gallery3.jpg"  alt="Solo limpo"
+           class="object-cover h-64 w-full rounded-lg shadow cursor-pointer hover:opacity-80"
+           onclick="openModal(this.src)">
+      <img src="images/gallery4.jpg"  alt="Regeneração natural"
+           class="object-cover h-64 w-full rounded-lg shadow cursor-pointer hover:opacity-80"
+           onclick="openModal(this.src)">
+      <img src="images/gallery5.jpg"  alt="Sacos prontos"
+           class="object-cover h-64 w-full rounded-lg shadow cursor-pointer hover:opacity-80"
+           onclick="openModal(this.src)">
+      <img src="images/gallery6.jpg"  alt="Paisagem regenerada"
+           class="object-cover h-64 w-full rounded-lg shadow cursor-pointer hover:opacity-80"
+           onclick="openModal(this.src)">
+    </div>
+  </div>
+</section>
+
+
+  <!-- ░░░ CATÁLOGO DE PRODUTOS (carrossel) ░░░ -->
+  <section id="produtos" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold burnt mb-10">Nosso catálogo</h2>
+
+      <div class="relative max-w-[100px] sm:max-w-[1300px] mx-auto">
+        <button id="prodPrev"
+                class="absolute -left-4 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">‹</button>
+        <button id="prodNext"
+                class="absolute -right-4 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">›</button>
+
+        <div id="prodTrack" class="flex overflow-x-hidden scroll-smooth">
+          <!-- Cartões injetados via JS (products.js) -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ FAQ ░░░ -->
+  <section id="faq" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold burnt text-center mb-10">Perguntas frequentes</h2>
+
+      <div class="space-y-6">
+        <details class="bg-gray-50 p-6 rounded-lg shadow group">
+          <summary class="flex justify-between items-center font-medium cursor-pointer group-open:text-emerald-600">
+            Como os produtos Da Serra ajudam a prevenir incêndios?
+            <span class="transition-transform group-open:rotate-180">▼</span>
+          </summary>
+          <p class="mt-4 text-gray-700">
+            A remoção de giestas queimadas reduz a carga combustível no solo. 
+            Parte da receita também financia vigilância florestal voluntária.
+          </p>
+        </details>
+
+        <details class="bg-gray-50 p-6 rounded-lg shadow group">
+          <summary class="flex justify-between items-center font-medium cursor-pointer group-open:text-emerald-600">
+            O vinagre de madeira é seguro para todas as plantas?
+            <span class="transition-transform group-open:rotate-180">▼</span>
+          </summary>
+          <p class="mt-4 text-gray-700">
+            Sim, desde que diluído corretamente (1:100 a 1:500). 
+            Recomendamos testar numa folha antes de pulverizar toda a cultura.
+          </p>
+        </details>
+
+        <details class="bg-gray-50 p-6 rounded-lg shadow group">
+          <summary class="flex justify-between items-center font-medium cursor-pointer group-open:text-emerald-600">
+            Posso visitar as áreas de intervenção?
+            <span class="transition-transform group-open:rotate-180">▼</span>
+          </summary>
+          <p class="mt-4 text-gray-700">
+            Organizamos caminhadas guiadas trimestrais. 
+            Fique atento às datas nas nossas redes sociais ou contacte-nos.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ CTA COMPRAR ░░░ -->
+  <section id="comprar" class="py-20 bg-emerald-50">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold burnt mb-6">Pronto para fazer parte da mudança?</h2>
+      <p class="mb-8 text-lg text-gray-700">
+        Escolha os produtos Da Serra e contribua para florestas mais limpas e saudáveis.
+      </p>
+      <a href="#produtos"
+         class="inline-block px-10 py-4 rounded-full bg-emerald-600 text-white font-semibold text-lg shadow-lg hover:bg-emerald-700 transition transform hover:scale-105">
+        Ver produtos
+      </a>
+    </div>
+  </section>
+
+  <!-- ░░░ FOOTER ░░░ -->
+  <footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center md:items-start gap-8 text-center md:text-left">
+      <div>
+        <h3 class="burnt2 text-xl mb-2">DA SERRA</h3>
+        <p>© <span id="currentYear"></span> Da Serra Eco Lda.<br>NIF 515 123 456</p>
+      </div>
+
+      <div class="space-y-2">
+        <p><strong>Email:</strong> <a href="mailto:apoio@daserra.pt" class="hover:text-white">apoio@daserra.pt</a></p>
+        <p><strong>Telefone:</strong> <a href="tel:+351910000000" class="hover:text-white">+351 910 000 000</a></p>
+        <p><strong>Morada:</strong> Rua da Giesta 123, 4640-000 Baião</p>
+      </div>
+
+      <div class="flex gap-4 text-2xl">
+        <a href="https://www.instagram.com/daserra"  target="_blank" class="hover:text-white" aria-label="Instagram">📸</a>
+        <a href="https://www.facebook.com/daserra"   target="_blank" class="hover:text-white" aria-label="Facebook">📘</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="imgModal"
+     class="fixed inset-0 bg-black/80 hidden items-center justify-center z-[60]"
+     onclick="closeModal()">
+  <img id="modalImg" class="max-w-3xl max-h-[90vh] rounded-lg shadow-lg" alt="imagem ampliada">
+  <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300">×</button>
+</div>
+
+  <!-- ░░░ SCRIPTS ░░░ -->
+  <script src="js/main.js"     defer></script>
+  <script src="js/products.js" defer></script>
+</body>
+</html>

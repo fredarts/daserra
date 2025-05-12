@@ -1,0 +1,79 @@
+/* === Marca & utilidades === */
+.burnt {
+    color: #4A3B31;            /* tom de carvão/terra */
+  }
+
+  .burnt2 {
+    color: #ffffff;            /* tom de carvão/terra */
+  }
+
+  .burnt3 {
+    color: #ffffff;            /* tom de carvão/terra */
+  }
+  
+  /* === Mobile menu animação === */
+  .mobile-menu {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* === HERO SLIDESHOW + Ken Burns === */
+  #hero-slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    background: #333;
+  }
+  
+  #hero-slideshow .hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    will-change: transform, opacity;
+  }
+  #hero-slideshow .hero-slide.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  #hero-slideshow .hero-slide.ken-burns {
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  /* Keyframes */
+  @keyframes ken-burns-style-1 {
+    0% { transform: scale(1) translate(0,0); }
+    100% { transform: scale(1.1) translate(2%,2%); }
+  }
+  @keyframes ken-burns-style-2 {
+    0% { transform: scale(1.15) translate(0,0); }
+    100% { transform: scale(1.05) translate(-2%,-2%); }
+  }
+  @keyframes ken-burns-style-3 {
+    0% { transform: scale(1.05) translate(-3%,0); }
+    100% { transform: scale(1.08) translate(3%,0); }
+  }
+  @keyframes ken-burns-style-4 {
+    0% { transform: scale(1) translate(0,0); }
+    100% { transform: scale(1.18) translate(0,0); }
+  }
+  .ken-burns-style-1 { animation-name: ken-burns-style-1; }
+  .ken-burns-style-2 { animation-name: ken-burns-style-2; }
+  .ken-burns-style-3 { animation-name: ken-burns-style-3; }
+  .ken-burns-style-4 { animation-name: ken-burns-style-4; }
+  
+  .hero-overlay-dynamic {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.3));
+    z-index: 2;
+  }
+  .hero-content-wrapper { position: relative; z-index: 3; }
+  
+  /* === Galeria modal scroll-lock helper === */
+  body.modal-open { overflow: hidden; }
+  

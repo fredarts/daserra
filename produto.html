@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Produto – Da Serra</title>
+
+  <!-- Tailwind (use build próprio em produção) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicons Completos -->
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+<link rel="manifest" href="images/favicon_io/site.webmanifest">
+<link rel="icon" href="images/favicon_io/favicon.ico">
+<!-- Fim Favicons -->
+
+  <!-- Estilos personalizados que já usa na home -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans antialiased text-gray-800 scroll-smooth">
+
+ <!-- ░░░ NAVBAR (id e classes idênticos à home) ░░░ -->
+<header class="bg-gray-900/90 backdrop-blur shadow-md sticky top-0 z-50 text-gray-100">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-2 text-2xl font-bold burnt3">
+        <img src="images/favicon_io/favicon-32x32.png" alt="Da Serra Logo" class="h-7 w-7"> <!-- Ajuste h-7 w-7 ou conforme preferir -->
+        <span>DA SERRA</span>
+      </a>
+  
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="index.html#sobre"    class="hover:text-emerald-400">Sobre nós</a>
+        <a href="index.html#impacto"  class="hover:text-emerald-400">Impacto</a>
+        <a href="index.html#produtos" class="hover:text-emerald-400">Produtos</a>
+        <a href="index.html#faq"      class="hover:text-emerald-400">FAQ</a>
+      </nav>
+  
+      <a href="index.html#produtos"
+   class="hidden md:inline-block px-5 py-2 rounded-full bg-emerald-600 text-white shadow hover:bg-emerald-500">
+  Comprar
+  </a>
+    </div>
+  </header>
+
+  <!-- ░░░ CONTEÚDO DO PRODUTO (injetado por JS) ░░░ -->
+  <main id="productPage" class="max-w-6xl mx-auto p-6 lg:py-12"></main>
+
+  <!-- ░░░ FOOTER (igual ao da home) ░░░ -->
+  <footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center md:items-start gap-8 text-center md:text-left">
+      <div>
+        <h3 class="burnt2 text-xl mb-2">DA SERRA</h3>
+        <p>© <span id="currentYear"></span> Da Serra Eco Lda.<br>NIF 515 123 456</p>
+      </div>
+
+      <div class="space-y-2">
+        <p><strong>Email:</strong> <a href="mailto:apoio@daserra.pt" class="hover:text-white">apoio@daserra.pt</a></p>
+        <p><strong>Telefone:</strong> <a href="tel:+351910000000" class="hover:text-white">+351 910 000 000</a></p>
+        <p><strong>Morada:</strong> Rua da Giesta 123, 4640-000 Baião</p>
+      </div>
+
+      <div class="flex gap-4 text-2xl">
+        <a href="https://www.instagram.com/daserra" target="_blank" class="hover:text-white" aria-label="Instagram">📸</a>
+        <a href="https://www.facebook.com/daserra"  target="_blank" class="hover:text-white" aria-label="Facebook">📘</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ░░░ SCRIPTS ░░░ -->
+  <!-- Reutilizamos a mesma lógica de navegação/ano/modal da home -->
+  <script src="js/main.js"     defer></script>
+  <script src="js/products.js" defer></script>
+
+  <script>
+    /* Injeta o produto correspondente ao ?id= */
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      injectProductDetail(params.get('id'));
+    });
+  </script>
+</body>
+</html>
